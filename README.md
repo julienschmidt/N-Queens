@@ -6,3 +6,7 @@ Submitted version of my programm for N-Queens speed-challange as part of the pro
 Note
 ----
 This was uploaded AFTER the deadline ;-)
+
+Known bugs
+----------
+* Typo at src/nqueens/NQueens.java line 28
