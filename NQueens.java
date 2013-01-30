@@ -59,36 +59,62 @@ public class NQueens {
         //reCount++;
         int max = board.length; // faster as field
         int sol = 0;
-        int y, x, col;
-        int num = max - i;
+        //int y, x, col;
 
-        out: for(y=0; y < max; y++) {
-            // Check for all existing Queens if they threaten the current
-            // positions
-            for(x=0; x < num; x++) {
-                col = board[x];
-                // same pos || num-x == abs(y-col) -> diagonal
-                if(col == y || num-x == y-col || num-x == -(y-col))
-                    continue out;
+
+        if(i == max) {
+            int odd     = (max) &1; // max%2
+            int half    = max>>1;   // max/2
+
+            // For every distinct solution exists another symmetric solution
+            // mirrored around the Y-axis (middle).
+            // So it is still possible to get all solutions by calculating only
+            // combinations with the first queen placed on the left half.
+            for(int y=0; y < half; y++) {
+                board[0] = y;
+                //System.out.println("1 " + y);
+                sol += 2*solve(i-1, board.clone());
             }
 
-            if(i == 1) {
-                sol++;
-            } else {
-                board[num] = y;
-                sol += solve(i-1, board.clone());
-            }
-            /* Slower :(
-            } else if(y == max-1) {
-                board[num] = y;
+            // If n is odd, the middle column must be treaded separately, because
+            // no mirrored solution exists
+            if(1 == odd) {
+                board[0] = half;
+                //System.out.println("h " + half);
                 sol += solve(i-1, board);
-            } else {
-                int[] newBoard = new int[max];
-                System.arraycopy(board, 0, newBoard, 0, max);
-                //int[] newBoard = (y == max-1) ? board: board.clone();
-                newBoard[num] = y;
-                sol += solve(i-1, newBoard);
-            }*/
+            }
+        } else {
+            int y, x, col;
+            int num = max - i;
+
+            out: for(y=0; y < max; y++) {
+                // Check for all existing Queens if they threaten the current
+                // positions
+                for(x=0; x < num; x++) {
+                    col = board[x];
+                    // same pos || num-x == abs(y-col) -> diagonal
+                    if(col == y || num-x == y-col || num-x == -(y-col))
+                        continue out;
+                }
+
+                if(i == 1) {
+                    sol++;
+                } else {
+                    board[num] = y;
+                    sol += solve(i-1, board.clone());
+                }
+                /* Slower :(
+                } else if(y == max-1) {
+                    board[num] = y;
+                    sol += solve(i-1, board);
+                } else {
+                    int[] newBoard = new int[max];
+                    System.arraycopy(board, 0, newBoard, 0, max);
+                    //int[] newBoard = (y == max-1) ? board: board.clone();
+                    newBoard[num] = y;
+                    sol += solve(i-1, newBoard);
+                }*/
+            }
         }
 
         return sol;
