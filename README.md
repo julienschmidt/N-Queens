@@ -1,7 +1,7 @@
 N-Queens
 ========
 
-Submitted version of my program for the *N-Queens speed-challange* as part of the programmer intership at Technische Universität München
+Submitted version of my program for the *N-Queens speed-challange* as part of the programmer internship at Technische Universität München
 
 Progress from trivial to fast
 -----------------------------
