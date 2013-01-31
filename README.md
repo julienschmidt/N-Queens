@@ -1,11 +1,14 @@
 N-Queens
 ========
 
-Submitted version of my program for N-Queens speed-challange as part of the programmer intership at Technische Universität München
+Submitted version of my program for the *N-Queens speed-challange* as part of the programmer intership at Technische Universität München
 
-Note
-----
-This was uploaded AFTER the deadline ;-)
+Progress from trivial to fast
+-----------------------------
+Since this was the winning submission (category "non threaded") I added a [`progress` branch](https://github.com/JulienSchmidt/N-Queens/commits/progress) where you can relive the way from the trivial algorithm to the optimized (fast) algoritm.
+
+You can browse the changes here: [`progress`](https://github.com/JulienSchmidt/N-Queens/commits/progress)
+
 
 Known bugs
 ----------
