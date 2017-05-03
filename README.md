@@ -1,22 +1,23 @@
 N-Queens
 ========
 
-Submitted version of my program for the *N-Queens speed-challange* as part of the programmer internship at Technische Universität München
+Submitted version of my entry to the *N-Queens speed-challenge* as part of the lab class *Fundamentals of Programming* of my first semester at the Technical University of Munich.
 
 Progress from trivial to fast
 -----------------------------
-Since this was the winning submission (category "non threaded") I added a [`progress` branch](https://github.com/JulienSchmidt/N-Queens/commits/progress) where you can relive the way from the trivial algorithm to the optimized (fast) algoritm.
+Since this was the winning submission (in the category "non-threaded"), I added a [`progress` branch](https://github.com/JulienSchmidt/N-Queens/commits/progress) where you can relive my progress from the trivial algorithm to the optimized (fast) algoritm.
 
 You can browse the changes here: [`progress`](https://github.com/JulienSchmidt/N-Queens/commits/progress)
 
-
 Known bugs
 ----------
-* Typo at src/nqueens/NQueens.java line 28
+Many, many spelling errors :)
 
+Bytecode
+--------
+I heavily optimized the code so it generates almost optimal byte code for the the chosen algorithmic approach.
+Here is the byte code generated from the performance-critical function:
 
-Bytecode generated from the performance-critical function
---------------------------------------------------------------
     private static int findPos(int, int, int, int);
       Code:
          0: iconst_0
